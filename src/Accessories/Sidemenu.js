@@ -19,9 +19,7 @@ export default function Sidemenu(){
                 </li>
                 <li>
                     <Link to="/api-page" className="menu__item">API</Link>
-                </li> <li>
-                    <Link to="/api-page" className="menu__item">API</Link>
-                </li>
+                </li> 
             </ul>
         </div>
     )
