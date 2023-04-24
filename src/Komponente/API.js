@@ -3,9 +3,18 @@ import Sidemenu from '../Accessories/Sidemenu';
 
 function API() {
   const [data, setData] = useState([]);
+  const formData = new FormData();
 
+  formData.append("broj", "Glotec");
   const fetchData = () => {
-    fetch('https://localhost/Fetch/fetch_NarudzbeAll.php')
+    fetch('https://localhost/Fetch/fetch_NarudzbeAll.php',
+    { method: 'POST',
+    headers: {
+      'Content-Type': 'multipart/form-data'
+    },
+    redirect: 'follow',
+    body: formData
+  })
       .then((res) => res.json())
       .then((resJson) => {
         setData(resJson);
