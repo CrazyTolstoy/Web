@@ -73,7 +73,8 @@ code {
 
 
 
-//NAVBAR
+//NAVBAR       -------------------------------------------------------------------------------------------
+
 .oblikZaGornjuSliku{
   width: 45%;
   background-color: #4464AD;
@@ -134,7 +135,9 @@ transform: skew(-30deg);
 
 
 
-//TABELA
+
+
+//UNOS U TABELU    ---------------------------------------------------------------------------------------------------
 
 .wrapperTabela {
   background-color: #000;
@@ -265,12 +268,15 @@ transform: skew(-30deg);
 }
 
 
-//TABELA
+
+
+//TABELA  --------------------------------------------------------------------------------
+
 .stranicaTabelaTabela{
   margin-top: 43px;
 }
 
-table{
+.tableHome{
   margin-top: 75px;
   margin-left: 55px;
   width: 750px;
@@ -290,7 +296,7 @@ td{
 
 .naslov{
   color: white;
-  margin-left: 65px;
+  margin-left: 60px;
 }
 
 .idKolona{
@@ -301,7 +307,14 @@ td{
   width: 8%;
 }
 
-//POPUP
+
+
+
+
+
+
+//POPUP  ---------------------------------------------------------------------------------
+
 .popup {
   background-color: #15172b;
   border-radius: 5px;
@@ -340,7 +353,14 @@ td{
   margin-top: -20px;
 }
 
-//SIDEMENU
+
+
+
+
+
+
+//SIDEMENU     -------------------------------------------------------------------------------
+
 .hamburger-menu{
   z-index: 999;
 }
@@ -419,15 +439,46 @@ td{
 }
 
 
-//API TABELA
+
+
+
+//API TABELA     -----------------------------------------------------------------------------
+
+.wrapperTabelaApi {
+  background-color: #000;
+  display: flex;
+  height: 100%;
+  min-height: 100vh;
+  justify-content: center;
+}
+
 .tabelaPrikaz{
   display: flex;
   flex-direction: column;
-  
+  margin-bottom: 43px;
 }
+
+.tipKolona{
+  width: 3%;
+}
+
+.datumKolona{
+  width: 12%;
+}
+
+.naslovApi{
+  color: white;
+}
+
+.filter{
+  display: flex;
+  flex-direction: row;
+}
+
 .fetchDugme{
   width:120px;
   height: 43px;
+  margin-top: 3px;
   background-color: rgb(7, 107, 170);
   border-radius: 12px;
   border: 0;
@@ -435,14 +486,19 @@ td{
   color: #eee;
   cursor: pointer;
   font-size: 18px;
-  margin-left: 55px;
   // outline: 0;
   text-align: center;
 }
+
+.ic4 {
+  margin-right: 15px;
+  width: 300px;
+  
+}
+
 .apiTable{
   margin-top: 75px;
-  margin-left: 55px;
-  width: 750px;
+  width: 880px;
   table-layout: fixed;
   background-color: #15172b;
   border: 2px solid #61dafb;
@@ -451,7 +507,15 @@ td{
 }
 
 
-//GRAFIK
+
+
+
+
+
+
+
+//GRAFIK   ---------------------------------------------------------------------------------
+
 .graphPage{
   background-color: #000;
   height: 100%;
@@ -526,3 +590,6 @@ td{
 .cut-short-graph {
   width: 135px;
 }
+
+
+

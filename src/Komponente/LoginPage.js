@@ -32,14 +32,6 @@ const theme = createTheme();
 
 export default function SignIn() {
   const navigate = useNavigate();
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
   const handle = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -64,7 +56,7 @@ export default function SignIn() {
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
+            marginTop: 3,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',

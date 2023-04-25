@@ -1,60 +1,78 @@
-import React, { useState, useEffect } from 'react';
-import Sidemenu from '../Accessories/Sidemenu';
+import React, { useState } from 'react';
+import axios from 'axios';
+import Sidemenu from '../Accessories/Sidemenu'
 
-function API() {
+function MyComponent() {
   const [data, setData] = useState([]);
-  const formData = new FormData();
+  const [textFieldValue, setTextFieldValue] = useState('');
 
-  formData.append("broj", "Glotec");
-  const fetchData = () => {
-    fetch('https://localhost/Fetch/fetch_NarudzbeAll.php',
-    { method: 'POST',
-    headers: {
-      'Content-Type': 'multipart/form-data'
-    },
-    redirect: 'follow',
-    body: formData
-  })
-      .then((res) => res.json())
-      .then((resJson) => {
-        setData(resJson);
-      });
+  const fetchData = async () => {
+    setData([]);
+    try {
+      const result = await axios.post('https://localhost/api.php', { broj: textFieldValue });
+      setData(result.data);
+    } catch (error) {
+      console.error(error);
+    }
+
   };
-  
+
   return (
-    <div  className='wrapperTabela'>
-      <div className='tabelaPrikaz'>
+    <div  className='wrapperTabelaApi'>
+      
       <Sidemenu/>
-      <h1 className='naslov'>Spisak narudzbi</h1>
+      <div className='tabelaPrikaz'>
+        
+      <h1 className='naslovApi'>Spisak narudzbi</h1>
       <br/>
+      <div className='filter'>
+      <div className="input-container ic4">
+      <input
+        id="firstname"
+        className="input"
+        type="text"
+        placeholder=" "
+        value={textFieldValue}
+        onChange={(e) => setTextFieldValue(e.target.value )}
+          />
+    </div>
       <button className='fetchDugme' onClick={fetchData}>Fetch Data</button>
-      <table>
+      </div>
+      <table className='apiTable'>
         <thead>
           <tr>
-            <th>Datum</th>
+            <th className='datumKolona'>Datum</th>
             <th>Komitent</th>
             <th>Broj Narudzbe</th>
-            <th>Tip</th>
+            <th className='tipKolona'>Tip</th>
             <th>Opis</th>
             <th>Organizaciona Jedinica</th>
           </tr>
         </thead>
         <tbody>
-          {data.map((order) => (
-            <tr key={order.BrojNarudzbe}>
-              <td>{order.Datum}</td>
-              <td>{order.Komitent}</td>
-              <td>{order.BrojNarudzbe}</td>
-              <td>{order.Tip}</td>
-              <td>{order.Opis}</td>
-              <td>{order.OrgJedinica}</td>
-            </tr>
-          ))}
-        </tbody>
+  {Array.isArray(data) && data.length > 0 ? (
+    data.map(order => (
+      <tr key={order.BrojNarudzbe}>
+        <td>{order.Datum}</td>
+        <td>{order.Komitent}</td>
+        <td>{order.BrojNarudzbe}</td>
+        <td>{order.Tip}</td>
+        <td>{order.Opis}</td>
+        <td>{order.OrgJedinica}</td>
+      </tr>
+    ))
+  ) : (
+    <tr>
+      <td colSpan="6"></td>
+    </tr>
+  )}
+</tbody>
       </table>
+      
       </div>
     </div>
   );
 }
 
-export default API;
+
+export default MyComponent;

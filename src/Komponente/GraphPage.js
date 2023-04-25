@@ -39,7 +39,7 @@ function API() {
   useEffect(() => {
     if (data.length > 0) {
       createChart(
-        data.map((post) => post.month),
+        data.map((post) => post.day_of_week),
         data.map((post) => parseFloat(post.parks)),
         data.map((post) => parseFloat(post.workplaces)),
         data.map((post) => parseFloat(post.residential))

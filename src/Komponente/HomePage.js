@@ -93,7 +93,7 @@ function HomePage() {
 
   <div className='stranicaTabelaTabela'>
     <h1 className='naslov'>Pregled unesenih podataka</h1>
-      <table>
+      <table className='tableHome'>
         <thead>
           <tr>
             <th className='idKolona'>ID</th>
