@@ -99,6 +99,7 @@ function API() {
       <div className='horizontalnaTraka'>
       <div id='myChart'></div>
       <div className="formaGraph">
+      <div className='formaDugmad'>
       <button type="submit" className="b1" onClick={handleParkClick}>
       Parkovi
     </button>
@@ -108,6 +109,7 @@ function API() {
     <button type="submit" className="b1" onClick={handlePosaoClick}>
       Posao
     </button>
+    </div>
     <div className="input-container ic2">
       <input
         id="max"
