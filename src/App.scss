@@ -71,72 +71,16 @@ code {
   }
 }
 
-
-
-//NAVBAR       -------------------------------------------------------------------------------------------
-
-.oblikZaGornjuSliku{
-  width: 45%;
-  background-color: #4464AD;
-  height: 100%;
-  transform-origin: left;
-transform: skew(-30deg);
-}
-
-.gornjaLinija{
-  display: flex;
-  height: 6vh;
-  border-bottom: 3px solid #4464AD;
-  transform-origin: top left;
-  align-items: center;
-  max-zoom: 1.1;
-  overflow-wrap: break-word;
-}
-
-.gornjaLinijaTekst{
-  display: flex;
-  width: 55%;
-  max-width: 55%;
-  align-items: center;
-  line-height: 1.2;
-  max-zoom: 1.5;
-  font-size: 1.1vw;
-}
-
-.gornjaLinijaSlika{
-  width: 45%;
-  max-width: 45%;
-}
-
-#oblik{
-  width: 100%;
-  height: inherit;
-}
-
-#ikonicaNavbar{
-  width: 12px;
-  height: 12px;
-}
-
-#paragrafNavbar{
-  margin-left: 10px;
-  margin-right: 15px;
-}
-
-.donjaLinija{
-  background-color: #f2fbfc;
-  border-bottom: 3px solid #f2fbfc;
-}
-
 #logo{
- max-width: 150px;
- margin: 15px;
+  width: 100px;
+  height: auto;
+  margin-right: 30px;
+  margin-left:30px;
 }
-
-
-
-
-
+#ikonica{
+  margin-right: 10px;
+  margin-left: 10px;
+}
 //UNOS U TABELU    ---------------------------------------------------------------------------------------------------
 
 .wrapperTabela {
@@ -279,7 +223,7 @@ transform: skew(-30deg);
 .tableHome{
   margin-top: 75px;
   margin-left: 55px;
-  width: 750px;
+  width: 780px;
   table-layout: fixed;
   background-color: #15172b;
   border: 2px solid #61dafb;
@@ -304,7 +248,7 @@ td{
 }
 
 .dugmeKolona{
-  width: 8%;
+  width: 9%;
 }
 
 
@@ -429,13 +373,13 @@ td{
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
   font-weight: 600;
-  text-decoration: none;
+  text-decoration: none !important; 
   transition-duration: .25s;
 }
 .menu__item:hover {
   background-color: rgb(102, 157, 240);
   color: black !important;
-  width: 80%;
+  width: 100%;
 }
 
 

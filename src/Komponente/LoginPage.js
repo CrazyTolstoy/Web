@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -32,23 +32,30 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignIn() {
+  const [data, setData] = useState([]);
   const navigate = useNavigate();
-  const handle = (event) => {
+  const handle = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const email = data.get('email');
     const password = data.get('password');
-
-    const result = axios.post('https://localhost/login.php', { ime: email, sifra:password });
-    console.log(result);
-    if (result!=null){
-      navigate('/table-page');
-    }
   
-    else(
-      myAlert("Neispravni podaci!")
-    )
+    try {
+      const result = await axios.post('https://localhost/login.php', { ime: email, sifra:password });
+      console.log(result.data); // log the response data
+      setData(result.data); // set the data state with the response data
+      if (Array.isArray(result.data) && result.data.length > 0){
+      navigate('/table-page');
+      }
+      else(
+        myAlert("Neispravni podaci!")
+      )
+    } catch (error) {
+      console.error(error);
+    }
   };
+
+  
   function myAlert(message) {
     window.alert(message);
   }

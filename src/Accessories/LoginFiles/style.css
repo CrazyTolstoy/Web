@@ -1,0 +1,96 @@
+.top {
+    border-bottom: 2px solid #4464ad;
+    background-color: white;
+    position: relative;
+}
+
+.top ul {
+    margin: 0;
+    padding: 10px 0;
+    height: 60px;
+    
+}
+
+.top ul li {
+    margin-right: 15px;
+    color: #333333;
+    font-size: 14px;
+    position: relative;
+}
+
+.top ul li:first-child {
+    padding-right: 15px;
+    margin-right: 15px;
+}
+
+.top ul li:first-child::before {
+    position: absolute;
+    right: 0;
+    height: 14px;
+    width: 1px;
+    background-color: #28324b;
+    top: 5px;
+}
+
+.top ul li i {
+    color: #28324b;
+    margin: 0 10px;
+}
+
+.top ul.top_menu {
+    background-color: #4464ad;
+    position: relative;
+    z-index: 2;
+}
+
+.top ul.top_menu li {
+    color: white;
+    position: relative;
+    text-transform: uppercase;
+    padding-right: 15px;
+    margin-right: 15px;
+}
+
+
+.top ul.top_menu li:last-child {
+    padding-right: 0;
+    margin-right: 0;
+}
+
+.top ul.top_menu li:last-child::before {
+    display: none;
+}
+
+.top ul.top_menu::before {
+    content: '';
+    position: absolute;
+    -ms-transform: skewX(-15deg);
+    -webkit-transform: skewX(-15deg);
+    transform: skewX(-15deg);
+    background-color: #4464ad;
+    width: 20px;
+    height: 100%;
+    z-index: 1;
+    left: -10px;
+    top: 0;
+}
+
+
+
+@media only screen and (min-width: 1601px) {
+    .top::before {
+        max-width: 790px;
+    }
+}
+
+
+@media only screen and (max-width: 991px) {
+    .visible-sm {
+        display: block;
+    }
+    .top {
+        display: none;
+    }
+
+}
+
