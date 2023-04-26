@@ -14,6 +14,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useNavigate } from "react-router-dom";
 import Navbar from '../Accessories/Navbar'
+import axios from 'axios';
 
 function Copyright(props) {
   return (
@@ -38,9 +39,12 @@ export default function SignIn() {
     const email = data.get('email');
     const password = data.get('password');
 
-    if (email === 'zvezda@gmail.com' && password === '123') {
+    const result = axios.post('https://localhost/login.php', { ime: email, sifra:password });
+    console.log(result);
+    if (result!=null){
       navigate('/table-page');
     }
+  
     else(
       myAlert("Neispravni podaci!")
     )
