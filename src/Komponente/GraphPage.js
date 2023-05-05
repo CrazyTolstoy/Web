@@ -22,8 +22,13 @@ function API() {
   };
   useEffect(() => {
     if (data.length > 0) {
-      setTitle(data[1].metro_area);
+      setTitle(data[1].metro_area); 
+      if(data[1].metro_area===""){
+        console.log("Rez"+data[1].metro_area);
+        setTitle("Ukupni rezultati");
+      }
     }
+    
   }, [data]);
 
   useEffect(() => {
@@ -33,6 +38,8 @@ function API() {
       fetchData('https://localhost/Mobility/fetch_Baguio.php');
     } else if (dataType === 'Manila') {
       fetchData('https://localhost/Mobility/fetch_Manila.php');
+    }else if (dataType === 'Sve') {
+      fetchData('https://localhost/Mobility/fetch_Sve.php');
     }
   }, [dataType]);
 
@@ -57,33 +64,50 @@ function API() {
 
   };
   const handleParkClick = () => {
-    setmaxValue(data[0].maximumP); 
+     
+    try {
+      setmaxValue(data[0].maximumP); 
     setminValue(data[0].minimumP); 
     setAvg(data[0].averageP); 
     setSd(data[0].standardna_devijacijaP); 
-    setRazlika(data[0].razlikaP); 
+    setRazlika(data[0].razlikaP);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
+
   const handlePosaoClick = () => {
+    try {
     setmaxValue(data[0].maximumPo); 
     setminValue(data[0].minimumPo); 
     setAvg(data[0].averagePo); 
     setSd(data[0].standardna_devijacijaPo); 
     setRazlika(data[0].razlikaPo); 
+  } catch (error) {
+    console.error(error);
+  }
   }; 
   
   const handleDomClick = () => {
-    setmaxValue(data[0].maximumD); 
-    setminValue(data[0].minimumD); 
-    setAvg(data[0].averageD); 
-    setSd(data[0].standardna_devijacijaD); 
-    setRazlika(data[0].razlikaD); 
+    try {
+      setmaxValue(data[0].maximumD); 
+      setminValue(data[0].minimumD); 
+      setAvg(data[0].averageD); 
+      setSd(data[0].standardna_devijacijaD); 
+      setRazlika(data[0].razlikaD); 
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
     <div className='graphPage'>
       <Sidemenu/>
       <div className='trakaDugmad'>
+      <button className='graphDugme' onClick={() => handleClick('Sve')}>
+      Ukupno
+      </button>
       <button className='graphDugme' onClick={() => handleClick('Bakolod')}>
       Bacolod
       </button>

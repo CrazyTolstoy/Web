@@ -1,10 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState,useRef } from 'react';
 import axios from 'axios';
 import Sidemenu from '../Accessories/Sidemenu'
+import { useReactToPrint } from 'react-to-print';
+import '../App.scss';
 
 function MyComponent() {
   const [data, setData] = useState([]);
   const [textFieldValue, setTextFieldValue] = useState('');
+  const componentPDF=useRef();
+
+  const generatePDF=useReactToPrint(
+    {
+      content:()=>componentPDF.current,
+      documentTitle:"Print",
+      className:'apiTable'
+    }
+  );
+
 
   const fetchData = async () => {
     setData([]);
@@ -37,8 +49,11 @@ function MyComponent() {
           />
     </div>
       <button className='fetchDugme' onClick={fetchData}>Fetch Data</button>
+      
+      <button className='fetchDugme' onClick={generatePDF}>Print</button>
       </div>
-      <table className='apiTable'>
+      <div className='tabelaOmotacPrint' ref={componentPDF}>
+      <table className='apiTable' >
         <thead>
           <tr>
             <th className='datumKolona'>Datum</th>
@@ -68,7 +83,7 @@ function MyComponent() {
   )}
 </tbody>
       </table>
-      
+      </div>
       </div>
     </div>
   );

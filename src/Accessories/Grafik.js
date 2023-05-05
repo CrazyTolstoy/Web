@@ -61,7 +61,7 @@ export const createChart = (xvalue, yValue1, yValue2, yValue3) => {
       },
       labels: {
         style: {
-            fontSize:'15px'
+            fontSize:'14px'
         }
     }
     }],
