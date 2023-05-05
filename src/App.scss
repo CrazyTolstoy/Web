@@ -399,8 +399,44 @@ td{
     justify-content: center;
     align-items: center;
   }
+  .apiTable {
+    background-color: #fff !important;
+    color: #000 !important;
+    border-color: #000 !important;
+  }
+
+.apiTable th,
+.apiTable td {
+  border: 1px solid black !important;
 }
 
+.apiTable td {
+  border: 1px solid black !important;
+}
+}
+
+.apiTable{
+  margin-top: 75px;
+  width: 880px;
+  table-layout: fixed;
+  background-color: #15172b;
+  border: 2px solid #61dafb;
+  color: white;
+  text-align: center;
+}
+
+.apiTable th,
+.apiTable td {
+  border: 1px solid white;
+}
+
+.apiTable tr:hover {
+  background-color: #272a52;
+}
+
+.apiTable td {
+  border: 1px solid white;
+}
 
 .wrapperTabelaApi {
   background-color: #000;
@@ -417,7 +453,7 @@ td{
 }
 
 .tipKolona{
-  width: 3%;
+  width: 5%;
 }
 
 .datumKolona{
@@ -437,6 +473,7 @@ td{
   width:120px;
   height: 43px;
   margin-top: 3px;
+  margin-right: 13px;
   background-color: rgb(7, 107, 170);
   border-radius: 12px;
   border: 0;
@@ -448,6 +485,35 @@ td{
   text-align: center;
 }
 
+.fetchDugme:hover{
+  background-color: rgb(5, 85, 134);
+}
+.fetchDugme:active{
+  background-color: rgb(23, 134, 202);
+}
+
+.exportDugme{
+  width:140px;
+  height: 43px;
+  margin-top: 3px;
+  margin-right: 13px;
+  background-color: rgb(7, 107, 170);
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  // outline: 0;
+  text-align: center;
+}
+
+.exportDugme:hover{
+  background-color: rgb(5, 85, 134);
+}
+.exportDugme:active{
+  background-color: rgb(23, 134, 202);
+}
 .ic4 {
   margin-right: 15px;
   width: 300px;
@@ -465,7 +531,19 @@ td{
 }
 
 
+.apiTable th,
+.apiTable td {
+  border: 1px solid white;
+  padding: 8px;
+}
 
+.apiTable tr:hover {
+  background-color: #272a52;
+}
+
+.apiTable td {
+  border: 1px solid white; /* set border color to white */
+}
 
 
 
