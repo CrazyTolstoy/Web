@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import Sidemenu from '../Accessories/Sidemenu';
 import { useReactToPrint } from 'react-to-print';
-import * as XLSX from 'xlsx';
 import ExcelJS from 'exceljs';
 import '../App.scss';
 
@@ -31,21 +30,48 @@ function MyComponent() {
     try {
       const workbook = new ExcelJS.Workbook();
       const worksheet = workbook.addWorksheet('Narudzbe');
-      worksheet.columns =  [
+      worksheet.columns = [
         { header: 'Datum', key: 'Datum', width: 15, style: { alignment: { wrapText: true } } },
         { header: 'Komitent', key: 'Komitent', width: 25, style: { alignment: { wrapText: true } } },
         { header: 'Broj Narudzbe', key: 'BrojNarudzbe', width: 20, style: { alignment: { wrapText: true } } },
         { header: 'Tip', key: 'Tip', width: 10, style: { alignment: { wrapText: true } } },
-        { header: 'Opis', key: 'Opis', width: 40, style: { alignment: { wrapText: true } } },
-        { header: 'Organizaciona Jedinica', key: 'OrgJedinica', width: 80, style: { alignment: { wrapText: true } } },
+        { header: 'Opis', key: 'Opis', width: 34, style: { alignment: { wrapText: true } } },
+        { header: 'Organizaciona Jedinica', key: 'OrgJedinica', width: 60, style: { alignment: { wrapText: true } } },
       ];
-      const header = worksheet.getRow(1);
-    header.fill = {
-      type: 'pattern',
-      pattern: 'solid',
-      fgColor: { argb: 'FF0070C0' }
-    };
+  
+      const headerRow = worksheet.getRow(1);
+      headerRow.eachCell({ includeEmpty: true }, function (cell) {
+        cell.fill = {
+          type: 'pattern',
+          pattern: 'solid',
+          fgColor: { argb: 'FF0070C0' }
+        };
+        cell.font = {
+          color: { argb: 'FFFFFFFF' },
+          bold: true
+        };
+        cell.border = {
+          top: { style: 'medium' },
+          left: { style: 'medium' },
+          bottom: { style: 'medium' },
+          right: { style: 'medium' }
+        };
+      });
+  
       worksheet.addRows(data);
+      worksheet.eachRow({ includeEmpty: false }, function (row, rowNumber) {
+        if (rowNumber > 0) {
+          row.eachCell(function (cell) {
+            cell.border = {
+              top: { style: 'medium' },
+              left: { style: 'medium' },
+              bottom: { style: 'medium' },
+              right: { style: 'medium' }
+            };
+          });
+        }
+      });
+  
       const buffer = await workbook.xlsx.writeBuffer();
       const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
       const url = window.URL.createObjectURL(blob);
@@ -62,6 +88,8 @@ function MyComponent() {
       console.error(error);
     }
   };
+  
+  
 
   return (
     <div className="wrapperTabelaApi">
