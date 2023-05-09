@@ -77,7 +77,7 @@ class PopUp extends React.Component {
                 onChange={(event) => this.handleFirstNameChange(event)}
               />
 
-              <div className="cutP"></div>
+              <div className="cut"></div>
 
               <label htmlFor="firstname" className="placeholder">
                 First name
@@ -94,7 +94,7 @@ class PopUp extends React.Component {
                 onChange={(event) => this.handleLastNameChange(event)}
               />
 
-              <div className="cutP"></div>
+              <div className="cut"></div>
 
               <label htmlFor="lastname" className="placeholder">
                 Last name
@@ -111,7 +111,7 @@ class PopUp extends React.Component {
                 onChange={(event) => this.handleEmailChange(event)}
               />
 
-              <div className="cutP cut-short"></div>
+              <div className="cut cut-short"></div>
 
               <label htmlFor="email" className="placeholder">
                 Email
