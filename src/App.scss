@@ -81,6 +81,8 @@ code {
   margin-right: 10px;
   margin-left: 10px;
 }
+
+
 //UNOS U TABELU    ---------------------------------------------------------------------------------------------------
 
 .wrapperTabela {
@@ -536,7 +538,42 @@ td{
 }
 
 
+//SPRING API TABLE
 
+.apiSpringTable{
+  margin-top: 75px;
+  width: 780px;
+  table-layout: fixed;
+  background-color: #15172b;
+  border: 2px solid #61dafb;
+  color: white;
+  text-align: center;
+}
+
+.apiSpringTable th,
+.apiSpringTable td {
+  border: 1px solid white;
+}
+
+.apiSpringTable tr:hover {
+  background-color: #272a52;
+}
+
+.apiSpringTable td {
+  border: 1px solid white;
+}
+
+.konto{
+  width: 10%;
+}
+
+.pozicija{
+  width: 65%;
+}
+
+.iznos{
+  width: 25%;
+}
 
 
 
