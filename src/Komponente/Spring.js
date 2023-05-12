@@ -12,10 +12,10 @@ function MyComponent() {
   const fetchData = async () => {
     setData([]);
     try {
-      const result = await axios.get('http://192.168.100.35:8080/Fetch/fetch_NarudzbeAll.php');
+      const result = await axios.post('http://192.168.1.36:8080/Fetch/fetch_NarudzbeAll.php', { broj: textFieldValue });
       setData(result.data);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
