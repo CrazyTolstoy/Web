@@ -12,7 +12,7 @@ function MyComponent() {
   const fetchData = async () => {
     setData([]);
     try {
-      const result = await axios.get('http://192.168.100.35:8080/Fetch/fetch_NarudzbeAll.php');
+      const result = await axios.get('https://spring-mysql-react-reports-app.herokuapp.com/bilans');
       setData(result.data);
     } catch (error) {
       console.log(error);
@@ -51,10 +51,10 @@ function MyComponent() {
           <tbody>
             {Array.isArray(data) && data.length > 0 ? (
               data.map((order) => (
-                <tr key={order.Datum}>
-                  <td>{order.Datum}</td>
-                  <td>{order.Komitent}</td>
-                  <td>{order.Tip}</td>
+                <tr key={order.konto}>
+                  <td>{order.konto}</td>
+                  <td>{order.pozicija}</td>
+                  <td>{order.iznos}</td>
                 </tr>
               ))
             ) : (
