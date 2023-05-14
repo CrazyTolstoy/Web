@@ -12,7 +12,7 @@ function MyComponent() {
   const fetchData = async () => {
     setData([]);
     try {
-      const result = await axios.get('https://spring-mysql-react-reports-app.herokuapp.com/bilans');
+      const result = await axios.get('http://crazytolstoy.ddns.net:8001/bilans');
       setData(result.data);
     } catch (error) {
       console.error(error);
