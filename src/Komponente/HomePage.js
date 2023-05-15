@@ -41,7 +41,7 @@ function HomePage() {
     <div className='wrapperTabela'>
      <Sidemenu/>
     <div className="form">
-    <div className="title">Welcome</div>
+    <div className="title">Dobrodošli!</div>
     <div className="subtitle">Let's create your account!</div>
     <div className="input-container ic1">
       <input

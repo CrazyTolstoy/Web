@@ -1,29 +1,3 @@
-.App {
-  text-align: center;
-}
-
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: top;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,7 +9,14 @@
 #lozinka{
   margin-left: 5px;
 }
+html{
+  
+  width: 100vw;
+  height: 100vh;
+}
 body {
+  width: 100vw;
+  height: 100vh;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -59,17 +40,7 @@ code {
   background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
 }
 
-@media (min-width: 768px) {
-  .gradient-form {
-    height: 100vh !important;
-  }
-}
-@media (min-width: 769px) {
-  .gradient-custom-2 {
-    border-top-right-radius: .3rem;
-    border-bottom-right-radius: .3rem;
-  }
-}
+
 
 #logo{
   width: 100px;
@@ -88,11 +59,13 @@ code {
 .wrapperTabela {
   background-color: #000;
   display: flex;
-  height: 100%;
+  min-height: 100vh; /* Set the minimum height to fill the viewport */
+  width: 100vw;
   flex-direction: row;
-  min-height: 100vh;
   position: relative;
+  height: 100%;
 }
+
 
 .form {
   background-color: #15172b;
@@ -434,6 +407,8 @@ td{
   background-color: #000;
   display: flex;
   height: 100%;
+  width: 100%;
+  min-width: 100vw;
   min-height: 100vh;
   justify-content: center;
 }
@@ -661,6 +636,63 @@ td{
 .cut-short-graph {
   width: 135px;
 }
+///////////////////////////////////
 
+/* Styles for mobile devices */
+@media screen and (max-width: 480px) {
+  .wrapperTabelaApi,
+  .wrapperTabela {
+    display: flex;
+    min-height: 350vh;
+    width: 350%;
+    flex-direction: row;
+    position: relative;
+}
 
+.graphPage{
+  min-height: 350vh;
+  width: 350%;
+}
+#myChart{
+  width: 700px;
+}
+.horizontalnaTraka{
+  margin-top: 30px;
+}
+.stranicaTabelaTabela{
+  margin-right: 40px;
+}
+}
 
+/* Styles for tablets */
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+  .wrapperTabelaApi,
+  .wrapperTabela {
+    display: flex;
+    min-height: 350vh;
+    width: 350%;
+    flex-direction: row;
+    position: relative;
+}
+.graphPage{
+  min-height: 350vh;
+  width: 350%;
+}
+#myChart{
+  width: 1500px;
+}
+.horizontalnaTraka{
+  margin-top: 30px;
+}
+}
+
+/* Styles for desktop and larger screens */
+@media screen and (min-width: 1025px) {
+  .wrapperTabela {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    flex-direction: row;
+    position: relative;
+}
+}
