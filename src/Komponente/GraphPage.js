@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Sidemenu from '../Accessories/Sidemenu';
-import { createChart } from '../Accessories/Grafik';
+import { createChart } from '../Accessories/GrafikGM';
 
 function API() {
   const [data, setData] = useState([]);
@@ -142,7 +142,7 @@ function API() {
         placeholder=" "
         value={maxValue}
         onChange={(e) => setmaxValue(e.target.value)}
-        disabled="true"
+        disabled={true}
           />
       <div className="cut cut-short-graph"></div>
       <label htmlFor="firstname" className="placeholder">
@@ -157,7 +157,7 @@ function API() {
         placeholder=" "
         value={minValue}
         onChange={(e) => setminValue(e.target.value)}
-        disabled="true"
+        disabled={true}
        />
       <div className="cut cut-short-graph"></div>
       <label htmlFor="lastname" className="placeholder">
@@ -172,7 +172,7 @@ function API() {
         placeholder=" "
         value={avg}
         onChange={(e) => setAvg(e.target.value)}
-        disabled="true"
+        disabled={true}
      />
       <div className="cut cut-short-graph"></div>
       <label htmlFor="email" className="placeholder">
@@ -186,7 +186,7 @@ function API() {
         placeholder=" "
         value={sd}
         onChange={(e) => setSd(e.target.value)}
-        disabled="true"
+        disabled={true}
      />
       <div className="cut cut-short-graph"></div>
       <label htmlFor="email" className="placeholder">
@@ -201,7 +201,7 @@ function API() {
         placeholder=" "
         value={razlika}
         onChange={(e) => setRazlika(e.target.value)}
-        disabled="true"
+        disabled={true}
      />
       <div className="cut cut-short-graph"></div>
       <label htmlFor="email" className="placeholder">

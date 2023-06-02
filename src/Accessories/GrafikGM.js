@@ -1,7 +1,7 @@
 import Highcharts from 'highcharts';
 import HighchartsExporting from 'highcharts/modules/exporting';
 
-export const createChart = (xValues, seriesData, idchart, opis, yOpis) => {
+export const createChart = (xvalue, yValue1, yValue2, yValue3) => {
   HighchartsExporting(Highcharts);
 
   const contextMenu = {
@@ -39,40 +39,46 @@ export const createChart = (xValues, seriesData, idchart, opis, yOpis) => {
     }
   }
 
+
   const options = { 
     chart: {
-      type: 'column'
+      type: 'line'
     },
     title: {
-      text: opis
+      text: 'Google Mobility - Philipines 2020'
     },
     xAxis: [{
-      categories: xValues,
+      categories: xvalue,
       labels: {
         style: {
-          fontSize:'10px'
+            fontSize:'15px'
         }
-      }
+    }
     }],
     yAxis: [{
       title: {
-        text: yOpis
+        text: 'Procentualno izražena promena'
       },
       labels: {
         style: {
-          fontSize:'10px'
+            fontSize:'14px'
         }
-      }
+    }
     }],
-    plotOptions: {
-      column: {
-        groupPadding: 0.1,
-        pointPadding: 0.01, // Adjust the spacing between columns
-        borderWidth: 0
-      }
-    },
-    series: seriesData
+    series: [{
+      name: 'Parkovi',
+      data: yValue1,
+      color: 'red'
+    }, 
+    {
+      name: 'Posao',
+      data: yValue2},
+      {
+      name: 'Dom',
+      data: yValue3,
+      xAxis: 0,
+      yAxis: 0
+    }]
   };
-
-  Highcharts.chart(idchart, options);
+  Highcharts.chart('myChart', options);
 };
