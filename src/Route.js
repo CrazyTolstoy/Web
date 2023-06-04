@@ -10,7 +10,7 @@ function MyRoutes() {
   return (
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<LoginPage/>} />
+      <Route path="/login" element={<LoginPage/>} />
       <Route path="/spring" element={<Spring/>} />
       <Route path="/table-page" element={<HomePage/>} />
       <Route path="/graphic-page" element={<Graph/>} />
