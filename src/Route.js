@@ -5,6 +5,8 @@ import Graph from './Komponente/GraphPage';
 import Spring from './Komponente/Spring';
 import Report from './Komponente/Report';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+
 
 function MyRoutes() {
   return (
