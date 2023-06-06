@@ -7,7 +7,7 @@ const ChartComponent = () => {
 
   useEffect(() => {
     // Fetch JSON results
-    fetch("https://localhost/Fetch/report.php")
+    fetch("https://192.168.1.102/Fetch/report.php")
       .then((response) => response.json())
       .then((data) => {
         setChartData(data); 

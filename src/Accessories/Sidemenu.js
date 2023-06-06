@@ -23,6 +23,9 @@ export default function Sidemenu(){
                 <li>
                     <Link to="/spring" className="menu__item">Spring</Link>
                 </li> 
+                <li>
+                    <Link to="/report" className="menu__item">Report</Link>
+                </li> 
             </ul>
         </div>
     )

@@ -33,7 +33,7 @@ function SignIn() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:8080/login', { email, password });
+      const response = await axios.post('http://192.168.1.102:8082/login', { email, password });
       if (response.data === 'Success') {
         console.log(response.data);
         navigate('/spring'); // Redirect to landing page
@@ -72,7 +72,7 @@ function SignIn() {
                 required
                 fullWidth
                 id="email"
-                label="Email Adresa"
+                label="Korisničko ime"
                 name="email"
                 autoComplete="email"
                 autoFocus
