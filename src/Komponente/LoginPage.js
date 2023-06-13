@@ -12,7 +12,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import Navbar from '../Accessories/Navbar';
 import axios from 'axios';
 
@@ -21,6 +21,13 @@ function SignIn() {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
   
+    useEffect(() => {
+        const auth = localStorage.getItem("auth") === "true";
+        if(auth && auth !== null) {
+            navigate("/spring");
+        }
+    }, []);
+
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
@@ -28,7 +35,7 @@ function SignIn() {
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -36,17 +43,19 @@ function SignIn() {
       const response = await axios.post('http://192.168.1.102:8082/login', { email, password });
       if (response.data === 'Success') {
         console.log(response.data);
+        localStorage.setItem("auth",true);
+        
         navigate('/spring'); // Redirect to landing page
       } else {
         alert("Pogrešni podaci!");
       }
     } catch (error) {
-      // Handle login error, e.g., display an error message
+      alert("Greška sa konekcijom!");
       console.error(error);
     }
   };
-
   return (
+    
     <div className="loginWrapper">
       <ThemeProvider theme={createTheme()}>
         <Navbar />
@@ -110,7 +119,7 @@ function SignIn() {
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="#" variant="body2">
+                  <Link variant="body2">
                     Nemate nalog? Registrujte se!
                   </Link>
                 </Grid>
@@ -122,5 +131,4 @@ function SignIn() {
     </div>
   );
 }
-
 export default SignIn;

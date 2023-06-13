@@ -19,7 +19,7 @@ function MyComponent() {
   const fetchData = async () => {
     setData([]);
     try {
-      const result = await axios.post('https://localhost/api.php', { broj: textFieldValue });
+      const result = await axios.post('https://192.168.1.102/api.php', { broj: textFieldValue });
       setData(result.data);
     } catch (error) {
       console.error(error);

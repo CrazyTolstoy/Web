@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Highcharts from "highcharts";
 import { createChart } from '../Accessories/Grafik';
+import Sidemenu from '../Accessories/Sidemenu';
 
 const ChartComponent = () => {
   const [chartData, setChartData] = useState([]);
@@ -53,10 +54,10 @@ const ChartComponent = () => {
   }, [chartData]);
 
   return (
-    <div>
-      <div id="chartContainer" />
-      <br />
-      <div id="chartContainer2" />
+    <div className="report">
+    <Sidemenu/>
+      <div id="chartContainer"></div>
+      <div id="chartContainer2"></div>
     </div>
   );
 };

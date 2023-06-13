@@ -347,8 +347,24 @@ td{
   width: 100%;
 }
 
-
-
+.logoutBtn{
+  display: block;
+  padding: 12px 24px;
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  border-color: transparent;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none !important; 
+  transition-duration: .25s;
+  width: 100%;
+}
+.logoutBtn:hover {
+  background-color: rgb(102, 157, 240);
+  color: black !important;
+  width: 100%;
+}
 
 
 //API TABELA     -----------------------------------------------------------------------------
@@ -636,6 +652,47 @@ td{
 .cut-short-graph {
   width: 135px;
 }
+
+
+
+//////////////////////////////REPORT
+
+.report{
+  
+  background-color: #000;
+  height: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+#chartContainer{
+  height: 400px;
+  display: flex;
+  margin: 43px;
+  margin-top: 22px;
+  margin-left: 10px;
+}
+
+#chartContainer2{
+  height: 400px;
+  display: flex;
+  margin: 43px;
+  margin-left: 10px;
+  margin-top: -22px;
+}
+
+
+
+
+
+
+
+
+
 ///////////////////////////////////
 
 /* Styles for mobile devices */
